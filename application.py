@@ -10,10 +10,10 @@ application = Flask(__name__)
 
 # print(phrase_to_search);
 
-consumer_key = 'hopVGo63q2B1HFw1eGy8h23nZ'
-consumer_secret = 'mpgx75J0UFhCd5c9GSS0VmShoUAc2IIt9RF0goXrn1KXcFWLe6'
-access_token = '344908066-rdePMLqxhXMcv932bottLSZnJ3ALDJgbl6UhyHZK'
-access_token_secret = 'dMwqHfUPFarhLJBbTLavRbpNBqCEA34YTX2dv5F0eJjb6'
+consumer_key = 'j6NjkfP4PxZxR81tBsCKd8jEF'
+consumer_secret = 'GhPHxnDnTLzeY6ejbMwhxrTd0A7a019Pc7nxRC2azUtdLckuBK'
+access_token = '344908066-3gb7pZfLeXkz1LH9djEaACrqoshzkOd9k9uBpvd3'
+access_token_secret = '4gcw6dL1H3fM0p0L7bqyP9xYtIXNwUgL5YJzFbnhG330o'
 
 g = []
  
