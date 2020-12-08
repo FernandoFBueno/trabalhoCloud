@@ -16,23 +16,28 @@ access_token = '344908066-rdePMLqxhXMcv932bottLSZnJ3ALDJgbl6UhyHZK'
 access_token_secret = 'dMwqHfUPFarhLJBbTLavRbpNBqCEA34YTX2dv5F0eJjb6'
 
 g = []
-
- 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
-api = tweepy.API(auth)
  
 
 @application.route("/")
 def hello():
+    return "<h1>TRABALHO DE CLOUD 44BDT</h1><h3>AWS CODE PIPELINE - ELASTIC BEANSTALK</h3><p>Esta aplicacao lista os Trending Topics do Twitter a cada clique no botão abaixo</p><p><a href='getTrendingTopics'>Ver Trending Topics</a></p>"
+
+
+@application.route("/getTrendingTopics")
+def gettingTopics():
+    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+    auth.set_access_token(access_token, access_token_secret)
+    api = tweepy.API(auth)
+
     BRAZIL_WOE_ID = 23424768
     brazil_trends = api.trends_place(BRAZIL_WOE_ID)
     trends = json.loads(json.dumps(brazil_trends, indent=1))
+    
     tt = []
     for trend in trends[0]["trends"]:
         tt.append("<br>"+trend["name"])
 
-    return "<h1>TRABALHO DE CLOUD 44BDT</h1><h3>AWS CODE PIPELINE - ELASTIC BEANSTALK</h3><p>Esta aplicacao lista os Trending Topics do Twitter a cada reload da pagina</p>"+ '\n'.join(tt)
+    return "<h1>TRABALHO DE CLOUD 44BDT</h1><h3>AWS CODE PIPELINE - ELASTIC BEANSTALK</h3><p>Esta aplicacao lista os Trending Topics do Twitter a cada clique no botão abaixo</p><p><a href='getTrendingTopics'>Ver Trending Topics</a></p>"+ '\n'.join(tt)
 
 
 if __name__ == '__main__':
